@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -18,6 +19,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -33,6 +35,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.database.Cursor;
 import android.location.Location;
+import android.media.RingtoneManager;
 import android.net.ParseException;
 import android.os.AsyncTask;
 import android.os.IBinder;
@@ -226,6 +229,8 @@ public class EarthquakeService extends Service implements OnSharedPreferenceChan
 				        .setSmallIcon(R.drawable.ic_launcher)
 				        .setContentIntent(pIntent)
 				        .setAutoCancel(true).build();
+				
+				n.defaults |= Notification.DEFAULT_SOUND;
 				  
 				NotificationManager notificationManager = 
 				  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -245,7 +250,7 @@ public class EarthquakeService extends Service implements OnSharedPreferenceChan
 			 Cursor c = cr.query(EarthquakeProvider.CONTENT_URI, null, w, null, null);
 			 
 			 if (c.getCount() == 0) {
-		        if (_danger.equals("none")) {
+		        if (!_danger.equals("none")) {
 		        	Log.v("DANGER",_danger);
 		        	danger = true;
 		        	dangerCount++;
