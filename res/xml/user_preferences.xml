@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="PREF_AUTO_UPDATE"
+        android:title="Auto Refresh"
+        android:summary="Check to turn on automatic updates"
+        android:defaultValue="true"/>
+ 	<ListPreference
+ 	    android:key="PREF_UPDATE_FREQ"
+        android:title="Refresh frequency"
+        android:summary="Frequency of auto-refresh"
+        android:entries="@array/update_freq_options"
+        android:entryValues="@array/update_freq_values"
+        android:dialogTitle="Refresh frequency"
+        android:defaultValue="60"
+ 	    />
+ 	<ListPreference
+ 	    android:key="PREF_MIN_MAG"
+        android:title="Minimum magnitude"
+        android:summary="Select a minimal value for shown magnitudes"
+        android:entries="@array/magnitude_options"
+        android:entryValues="@array/magnitude"
+        android:dialogTitle="Magnitude"
+        android:defaultValue="2"
+ 	    />
+</PreferenceScreen>

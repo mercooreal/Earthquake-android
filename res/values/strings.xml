@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EarthQuake</string>
+    <string name="action_settings">Settings</string>
+    <string name="quake_feed">http://earthquake-app.herokuapp.com/api/earthquakes</string>
+    <string name="menu_update">Refresh Earthquakes</string>
+    <string name="auto_update_prompt">Auto Update?</string>
+    <string name="update_freq_prompt">Update Frequency</string>
+    <string name="min_quake_mag_prompt">Minimum Quake Magnitude</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="title_activity_preferences">Preferences</string>
+    <string name="title_activity_earthquake_map">EarthquakeMap</string>
+    <string name="menu_map">Show map</string>
+
+</resources>
